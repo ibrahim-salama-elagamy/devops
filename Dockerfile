@@ -1,9 +1,8 @@
-FROM tomcat:8-jre11
-RUN rm -rf /usr/local/tomcat/webapps/*
-COPY target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+FROM http:latest
+RUN touch file.txt
 EXPOSE 8080
-WORKDIR /usr/local/tomcat/
-CMD ["catalina.sh", "run"]
+WORKDIR /usr/local/apache2
+CMD ["http-foreground"]
 
 
 
